@@ -1,7 +1,12 @@
-package list.controller;
+package tools.controller;
+
+import java.util.List;
 
 public class ListController
 {
+	private List<Kahoot> myKahoots;
+	private PopupDisplay popup;
+	
 String currentCreator = "";
 for (int index = 0; index < myKahoots.size(); index += 1)
 {
@@ -14,7 +19,7 @@ for (int index = 0; index < myKahoots.size(); index += 1)
 	
 	if (currentCreator.equals("nobody"))
 	{
-		for (int loop = 0; loob < 5; loop += 1)
+		for (int loop = 0; loop < 5; loop += 1)
 		{
 			popup.displayText("wow nobody does a lot")
 			
@@ -30,12 +35,36 @@ for (int index = 0; index < myKahoots.size(); index += 1)
 		popup.displayText(topic.substring(letter, letter + 1));
 	}
 }
-}
-
-	private void fillTheList()
+ public void start
+ private void fillTheList()
 	{
 		Kahoot fiftyStates = newKahoot("Kashish", 50, "Thefifty UnitedStates");
 		
 		myKahoots.add(fiftyStates);
 		
 	}
+
+private void changeTheList()
+{
+	popup.displayText("The current list size is: " + myKahoots.size());
+	Kahoot removed = myKahoots.remove(3);
+	popup.displayText("I removed the Kahoot by " + removed.getCreator());
+	popup.displayText("The list now has: " + myKahoots.size()+ " items inside.");
+	myKahoots.add(0, removed);
+	
+	popup.displayText("The list is still: " + myKahoots.size() + "items big.");
+	removed = myKahoots.set(2, new Kahoot())
+	popup.displayText("the kahoot by " + removed.getCreator() + " was replaced with on by: " + myKahoots.get(2).getCreator());
+	
+}
+
+public PopupDisplay getPopup()
+{
+	return popup
+}
+
+	public ArrayList<Kahoot> getMyKahoots()
+	{
+		return (ArrayList<Kahoot>) myKahoots;
+	}
+}
