@@ -13,5 +13,9 @@ public class PopupDisplay
 	public String getResponse(String fromQuestion)
 	{
 		String answer = "";
+		
+		answer += JOptionPane.showInputDialog(null, fromQuestion);
+		
+		return answer;
 	}
 }
