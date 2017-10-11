@@ -1,8 +1,6 @@
 package tools.controller;
 
 import java.util.List;
-
-import java.util.List;
 import java.util.ArrayList;
 import tools.model.Kahoot;
 import tools.view.PopupDisplay;
@@ -27,15 +25,15 @@ changeTheList();
 }
 private void showTheList()
 {
-String currentCreator = "";
-for (int index = 0; index < myKahoots.size(); index += 1)
-{
-currentCreator = myKahoots.get(index).getCreator();
-Kahoot currentKahoot = myKahoots.get(index);
-String creator = currentKahoot.getCreator();
-popup.displayText(myKahoots.get(index).toString());
-if (currentCreator.equals("nobody"))
-{
+	String currentCreator = "";
+	for (int index = 0; index < myKahoots.size(); index += 1)
+	{
+		currentCreator = myKahoots.get(index).getCreator();
+		Kahoot currentKahoot = myKahoots.get(index);
+		String creator = currentKahoot.getCreator();
+		popup.displayText(myKahoots.get(index).toString());
+		if (currentCreator.equals("nobody"))
+		{
 for (int loop = 0; loop < 5; loop += 1)
 {
 popup.displayText("wow nobody does a lot");
@@ -86,5 +84,19 @@ public ArrayList<Kahoot> getMyKahoots()
 {
 return (ArrayList<Kahoot>) myKahoots;
 }
+
+public int findMax(ArrayList<String> myList)
+{
+	int min = Integer.MAX_VALUE;
+	for (int index = 0; index < myList.size(); index++)
+     {
+		if (myList.get(index).length() < min);
+		{
+			min = myList.get(index).length();
+		}
+     }
+	return min;
+}
+
 
 }

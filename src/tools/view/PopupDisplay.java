@@ -1,4 +1,4 @@
-package tools.controller;
+package tools.view;
 
 import javax.swing.JOptionPane;
 

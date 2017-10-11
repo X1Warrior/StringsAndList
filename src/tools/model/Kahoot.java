@@ -1,4 +1,4 @@
-package tools.controller;
+package tools.model;
 
 public class Kahoot
 {
@@ -30,5 +30,12 @@ public String toString()
 	
 	return description;
 }
-
+public String getCreator()
+{
+	return creator;
+}
+public String getTopic()
+{
+	return topic;
+}
 }
